@@ -1,0 +1,43 @@
+#:kivy 1.7.2
+
+<Perle>:
+    size: 30, 30 
+    canvas:
+		Color:
+			rgb: (0,1,0)
+        Ellipse:
+            pos: self.pos
+            size: self.size
+
+<JeuPerles>:
+
+	perleVoyA: perleA
+	perleVoyB: perleB
+
+# ...canvas and other labels :
+
+	canvas:
+		Rectangle:
+			pos: self.center_x/4, self.center_y
+			size: self.width/2, 4 
+		
+		#Ellipse:
+           # pos: self.center_x/4, self.center_y
+           # size: self.size
+			
+	Label:
+		font_size: 40  
+		center_x: root.width / 2
+		top: root.top - 30
+		text: "Consigne Voyelle"
+		
+	Perle:
+		id: perleA # mettre en couleur ! 
+        center: self.parent.width-50, self.parent.center_y
+	
+	Perle:
+		id: perleB # mettre en couleur ! 
+        center: self.parent.width-50, self.parent.center_y-60
+	
+
+   
